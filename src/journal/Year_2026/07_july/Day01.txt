@@ -1,0 +1,90 @@
+/**
+ *                                                  Question 1 (Easy)
+ * - Scenario: Warehouse Inventory Verification
+ * - You are building an inventory system for a warehouse.
+ * - Every product that arrives is scanned, and its product ID is recorded.
+ * - Due to a scanner malfunction, one product might be scanned twice.
+ * - Your task is to detect the first duplicate product ID as the inventory is processed.
+ */
+
+/**
+ * Day        : 001
+ * Date       : 03-Jul-2026
+ * Difficulty : Easy
+ * Topic      : Arrays
+ *
+ * Pattern    : Hash + lookups
+ *              Directly implemented the Hashmap solution for O(1) lookups to find if the id is already present
+ *              Updated - Set(HashSet) can be used for O(1) lookups and no need to store index value
+ * Data Structure: HashMap/HashSet
+ *
+ * Updated -
+ * Set(HashSet) can be used for O(1) lookups and no need to store index value.
+ *
+ * Time Taken : 8 min
+ * Status     : Solved
+ *
+ * Time Complexity  : O(n)
+ * Space Complexity : O(n)
+ *
+ * Learning:
+ * Can use HashMap/HashSet to store the processed values and to find the values
+ * with instant O(1) lookups.
+ *
+ * To find the duplicates, need to store the proccessed values, preferrably
+ * HashSet/HashMap.
+ *
+ * Mistakes:
+ * (Not exactly a mistake):
+ * Used HashMap instead of HashSet, Stored the index value too, but it is not
+ * required, taking a little extra space/memory.
+ *
+ * And checking the condition if the array is processed every time and returning
+ * there adds extra n operations.
+ */
+
+-----------------------------------------------------------------------------------------------------------------------
+
+/**
+ *                                     Question 2 (Medium)
+ * - Scenario: Bank Transaction Analyzer
+ * - You are working on Axis.
+ * - Every transaction has a positive or negative amount.
+ * - The finance team wants to quickly detect whether there exists a continuous sequence of transactions whose total amount equals a target value.
+ * - If such a sequence exists, return its starting and ending indices.
+ * - Otherwise return [-1, -1].
+ */
+
+/**
+ * Day        : 001
+ * Date       : 03-Jul-2026
+ * Difficulty : Easy
+ * Topic      : Arrays
+ * Pattern    : Prefix Sum + Hashing
+ * Optimization Path: Brute Force → Running Sum → Prefix Sum + HashMap
+ * Data Structures  : HashMap
+ * 
+ * Recognition Clues:
+ *   - Continuous subarray
+ *   - Sum equals target
+ *   - Negative numbers present (so sliding window won't work)
+ *   - O(n) expected
+ *
+ * Time Taken : 1hr min (need to improve)
+ * Status     : Solved with mix of Independent + Hint.
+ *
+ * Time Complexity  : O(n^3) -> O(n^2) -> O(n)
+ * Space Complexity : O(1) -> O(1) -> O(n)
+ *
+ * Learning:
+ * - Prefix + two sum -> to find sub array sum equal to target
+ * - to find the subarray sum in O(n), use Prefix sum + HashMap, if need indices, or else Prefix sum + HashSet
+ * - It is always better to initialize hashmap with a default value say 0 or custom default value.
+ * - For prefix sum problems, initialize the HashMap with (0, -1) to represent a prefix sum of 0 before the array starts. This correctly handles subarrays that begin at index 0.
+ *
+ * Mistakes:
+ * - in the first iteration, have done duplicated calculations, which also cause the final indexes swapping issue.
+ * - Could find the the opitimized solution but got the first step correct as prefix sum couldnt get the second step, I would say decent intution.
+ * - Missed the edge case where the required subarray starts from index 0. Initializing the prefix map with (0, -1) correctly handles these cases.
+ * - Created an uneeded prefixsum array
+ */

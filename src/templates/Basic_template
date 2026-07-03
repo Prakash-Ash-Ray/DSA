@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class P1_Easy_InventoryMismatch {
+
+    /**
+     * Day        : 001
+     * Date       : 03-Jul-2026
+     * Difficulty : Easy
+     * Topic      : Arrays
+     * Pattern    : Brute Force
+     *
+     * Time Taken : __ min
+     * Status     : Solved / Partially Solved / Couldn't Solve
+     *
+     * Time Complexity  :
+     * Space Complexity :
+     *
+     * Learning:
+     * -
+     * -
+     *
+     * Mistakes:
+     * -
+     * -
+     */
+
+    public static void main(String[] args) {
+
+        // Test Cases
+
+        System.out.println(solve());
+
+    }
+
+    public static int solve() {
+
+        // Step 1: Understand the problem
+
+        // Step 2: Think about brute force
+
+        // Step 3: Improve
+
+        // Step 4: Write optimal solution
+
+        return 0;
+    }
+}
