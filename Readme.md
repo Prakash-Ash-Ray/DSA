@@ -8,7 +8,7 @@
 | **Phase 2** | Medium        | 2 Medium             | Solve most Medium problems without looking at hints.           |
 | **Phase 3** | Medium + Hard | 1 Medium + 1 Hard    | Learn optimization techniques and advanced data structures.    |
 | **Phase 4** | Hard          | 2 Hard               | Combine multiple concepts naturally to solve complex problems. |
-| **Phase 5** | Very Hard     | 1 Hard + 1 Very Hard | Think like a senior engineer solving real-world algorithmic and system-level problems.                                                                                                |
+| **Phase 5** | Very Hard     | 1 Hard + 1 Very Hard | Think like a senior engineer solving real-world algorithmic and system-level problems.                                                                                              |
 
 ---
 
