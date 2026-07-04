@@ -1,0 +1,101 @@
+/**                                 Question 1 (Easy)
+Scenario: Log Cleanup Service
+
+You're building a log processing service for Axis.
+
+After logs are sorted by timestamp, duplicate log IDs appear next to each other because multiple services accidentally recorded the same event.
+
+To reduce storage usage, the infrastructure team wants you to remove duplicates in-place.
+
+Return the number of unique log IDs.
+*/
+ /**
+     * Day        : 002
+     * Date       : 04-Jul-2026
+     * Difficulty : Easy
+     * Topic      : Arrays
+     * Pattern    : two pointer
+     * Why this pattern?
+     *          The array is sorted, so duplicates are adjacent.
+     *          A read pointer can scan the array while a write pointer compacts unique elements in place using O(1) extra space.
+     *
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(n)
+     * Space Complexity : O(1)
+     *
+     * Learning:
+     * - To check the boundary conditions and edge cases.
+     * - understand the constraints before solving the problem
+     * - Simplify the logic instead of preserving unnecessary data (duplicates don't need to be kept).
+     * - Identify the appropriate pattern from the clues like Sorted, in-place, O(1)
+     *
+     * Mistakes:
+     * - didn't understand the constraints properly; 
+     * - didnt check for edge cases. 
+     * - check for the boundaries violation properly, making simple logic complex
+     */
+
+-----------------------------------------------------------------------------------------------------------------
+
+/**                                  Question 2 (Medium)
+Scenario: Customer Appointment Scheduler
+
+You're building the appointment scheduler for Axis Bank.
+
+Customers request appointment slots represented by:
+
+[startTime, endTime]
+
+Some appointments overlap.
+
+Before showing the schedule to the branch manager, merge all overlapping appointments.
+*/
+
+/**
+     * Day        : 002
+     * Date       : 04-Jul-2026
+     * Difficulty : Medium
+     * Topic      : Arrays
+     * Pattern    : Sorting + Linear Scan (Merge intervals)
+     * Recognition Clues:
+     *      Overlapping intervals
+     *      Merge ranges
+     *      Start and end values
+     *      Scheduling or calendar problems
+     *      Unsorted intervals → Sort first
+     *
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(NlogN)
+     * Space Complexity : O(N)
+     *
+     * Learning:
+     * - Always clarify whether intervals are sorted; if not, sort by the start time first.
+     * - When merging intervals, the merged end time should be the maximum end seen so far.
+     * - Handle edge cases explicitly (empty input, single interval).
+     * - Allocate for the maximum possible result size, then trim it before returning.
+     * - Think in terms of maintaining a current merged interval while traversing
+     *
+     * Mistakes:
+     * - forgot to deal with single interval edge case
+     * - merge logic failed some cases. fixed it.
+     */
+
+/**                            Tiny Challenge
+ * - Instead of merging appointments, 
+ *   return the minimum number of meeting rooms required so that no two overlapping appointments share the same room.
+ *  eg1:
+ *  [1,4]
+ *  [2,5]
+ *  [7,9]
+ * 
+ * - find the min startTime and max endTime,
+ *   from startTime to endTime, go step by step, and check in that interval how many meetings are happening
+ *   from eg1: 1, 9 -> (1,2), (2,3), (3,4) ...(5,6), (6,7), (7,8) (8,9)
+ *   optimizatio: only look for active interval/interval where change occurs, skip the otherwise..
+ *   from eg1: 1, 9 -> (1,2), (2,4), (4,5), (5,7), (7,9) 
+ *   Algorithm: Sweep Line ALgorithm
+ */
