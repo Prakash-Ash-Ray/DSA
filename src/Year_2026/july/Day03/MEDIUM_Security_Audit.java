@@ -140,7 +140,7 @@ public class MEDIUM_Security_Audit {
             }
 
             while(failures > k) {
-                while(logins.charAt(left) == 'F') {
+                if(logins.charAt(left) == 'F') {
                     failures--;
                 }
                 left++;

@@ -81,6 +81,17 @@ public class EASY__Cleanup_Service {
             } 
         }
 
+        /*
+            while(read < logIds.length) {
+                if(logIds[write] != logIds[read]) {
+                    write++;
+                    logIds[write] = logIds[read];
+                }                
+                read++;
+            } 
+        }
+        */
+
         System.out.println(Arrays.toString(logIds));
 
         return write+1;
