@@ -23,7 +23,7 @@ public class MEDIUM__Transaction_Analyzer {
     /**
      * Day        : 001
      * Date       : 03-Jul-2026
-     * Difficulty : Easy
+     * Difficulty : Medium
      * Topic      : Arrays
      * Pattern    : Prefix Sum + Hashing
      * Optimization Path: Brute Force → Running Sum → Prefix Sum + HashMap

@@ -1,0 +1,87 @@
+/**
+ *                  Question 1 (Easy)
+Scenario: Website Traffic Analyzer
+
+You're building analytics for Axis.
+
+Every minute, the website records how many users are currently active.
+
+The analytics team wants to know the maximum number of users that were active during any consecutive k minutes.
+ */
+
+/**
+     * Day        : 003
+     * Date       : 06-Jul-2026
+     * Difficulty : Easy
+     * Topic      : Arrays
+     * Pattern    : Calculated fixed sum + Fixed sliding window.
+     * Recognition Clues:
+     *      Consecutive elements
+     *      Fixed window size (k)
+     *      Maximum/Minimum/Sum
+     *      O(n) expected
+     * Why Sliding Window?
+     *  Because consecutive subarrays overlap.
+     *  Instead of recalculating every window from scratch,
+     *  reuse the previous window by removing one element and adding one element.
+     *
+     * Time Taken : Nan
+     * Status     : Solved 
+     *
+     * Time Complexity  : O(n)
+     * Space Complexity : O(1)
+     *
+     * Learning:
+     * - Compute first window once, then slide the fixed window, by subtracting first element and adding the next upcoming element
+     * - Avoid unnecessary special-case handling if the general algorithm already covers it.
+     * Mistakes:
+     * - written unnecessary code for handling special case
+     */
+
+/**
+ *              Question 2 (Medium)
+Scenario: Security Audit
+
+You're building a security monitoring service for Axis.
+
+Every login attempt is represented by a character:
+
+S = Success
+F = Failure
+
+The security team wants to find the longest continuous period during which there were at most k failed logins.
+
+Return the length of that longest period.
+ */
+
+ /**
+     * Day        : 003
+     * Date       : 06-Jul-2026
+     * Difficulty : Medium
+     * Topic      : Arrays
+     * Pattern    : resizing the sliding windows dynamically, by shrinking and expanding. (Variable sliding window)
+     * Recognition Clues:
+     *      Continuos subarray/substring
+     *      at most K
+     *      longest/Shortest
+     *      O(N) expected
+     * Invariant:
+     *   State what is always true about your window after each iteration.
+     * 
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(N)
+     * Space Complexity : O(1)
+     *
+     * Learning:
+     * I don't need to remember the positions of every interesting element.
+     *   Often, maintaining a simple property of the current window (like the count of failures) is enough.
+     * Expand -> Fix the window if needed -> Measure.
+     * undersating good invariant makes the code elegant.
+     *
+     * Mistakes:
+     * - misunderstood/calculated how to track the failure and move the startpointer/left
+     * - bad choice of when to update the parameters, which is direct result of bad code style/invariant.
+     * - bad invariant/code-style , correctness is there, but elegence, or better writing is missed.
+     */
