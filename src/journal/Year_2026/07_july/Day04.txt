@@ -1,0 +1,92 @@
+/**
+ *              Question 1 (Easy)
+Scenario: API Version Lookup
+
+You're maintaining the deployment system for Axis.
+
+The deployed API versions are stored in ascending order.
+
+Given a version number, determine whether it has been deployed.
+
+Return its index if found; otherwise return -1.
+ * EASY__ApiVersion_Lookup
+ */
+
+ /**
+     * Day        : 004
+     * Date       : 07-Jul-2026
+     * Difficulty : Easy
+     * Topic      : Arrays
+     * Pattern    : Binary Search
+     * Recognition Clues:
+     *    Sorted array
+     *    Fast lookup
+     *    O(log n)
+     *    Search for exact value
+     * 
+     *
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(log N)
+     * Space Complexity : O(1)
+     *
+     * Learning:
+     * - When the input is sorted and the problem requires searching for an exact value in O(log n), 
+     *    Binary Search is usually the first pattern to consider.
+     * - To remember: for mid, use left + (right - left)/2, instead of (left + right)/2.
+     * 
+     * Invariant:
+     *      If the target exists, it is always within the current search range [left, right].
+     *
+     * Mistakes:
+     * - I already know this so, no mistakes made for this one.
+     */
+
+--------------------------------------------------------------------------------------------------------------------
+
+/**\
+                    Question 2 (Medium)
+Scenario: Cloud Backup Capacity
+
+You're building a backup service for Axis.
+
+Each database has a storage size (in GB).
+
+Backups must be completed within D days.
+
+Each day, you choose a maximum backup capacity (GB/day).
+
+Databases must be backed up in order. You cannot split a single database across multiple days.
+
+Find the minimum daily backup capacity required to finish all backups within D days.
+ */
+
+ /**
+     * Day        : 004
+     * Date       : 07-Jul-2026
+     * Difficulty : Medium
+     * Topic      : Arrays
+     * Pattern    : Binary Search on Answer(Solution search space/range).
+     * Pattern Recognition Clues:
+     *      - Search for minimum feasible answer
+     *      - "Within D days"
+     *      - Monotonic condition
+     *      - Binary Search on Answer
+     * 
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(N log(sum)), search space size = sum(Databases) - max(Databases) + 1
+     * Space Complexity : O(1)
+     *
+     * Learning:
+     * - Binary Search can be applied to the answer space, not only sorted arrays.
+     * - Convert an optimization problem into a decision problem.
+     * - If a capacity works, every larger capacity also works (monotonic property).
+     *
+     * Mistakes:
+     * - Initially assumed the problem was partitioning the array. Focused on partition points instead of searching the answer.
+     * - Forgot that D can be any value, not always 2,then which I blindly went for doing binary search to split array into two.
+     * - and some small mistakes, like condition instead of <= used == and little stumbled on little logic at totalDays count.
+     */
