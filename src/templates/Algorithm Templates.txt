@@ -1,0 +1,42 @@
+*** Binary Search Template ***
+
+while(left <= right)
+
+    compute mid
+
+    move left/right
+
+-- The Condition changes
+-----------------------------------------------------------------------------------------------------------------------
+
+*** Binary Search on Answer ***
+
+while(low < high)
+
+    mid
+
+    if feasible
+
+        search left
+
+    else
+
+        search right
+
+-- The feasible function changes
+-----------------------------------------------------------------------------------------------------------------------
+
+*** Monotonic Stack ***
+
+for each element
+
+    while(stack not empty
+          && current solves stack top)
+
+        pop
+        update answer
+
+    push current
+
+-- The current solves stack top Condition changes
+-----------------------------------------------------------------------------------------------------------------------

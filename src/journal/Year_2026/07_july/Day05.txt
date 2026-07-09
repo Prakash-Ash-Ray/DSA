@@ -1,0 +1,101 @@
+/*
+            Question 1 (Easy)
+Scenario: Daily Server Load Monitor
+
+You're building a monitoring dashboard for Axis.
+
+Each day, the monitoring system records the server load percentage.
+
+For every day, determine how many days you must wait until a higher server load occurs.
+
+If no future day has a higher load, return 0 for that day.
+*/
+ /**
+     * Day        : 005
+     * Date       : 09-Jul-2026
+     * Difficulty : Easy
+     * Topic      : Stack
+     * Pattern    : monotonic stack (Next Greater Element))
+     * Why does the stack work?
+     *      Because once a larger future load is found, that previous day's answer is finalized forever.
+     *      It never needs to be revisited. 
+     * 
+     * Recognition Clues:
+     *      next greater element
+     *      future element
+     *      First Large element
+     *      O(n) expected
+     * 
+     * Invariant:
+     *       The stack always stores indices whose next greater load has not yet been found.
+     *       The stack stores unresolved indices, and their corresponding values are monotonic.
+     *       Bottom → Top: decreasing (for Next Greater)
+     *       Top → Bottom: increasing
+     * 
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(N)
+     * Space Complexity : O(N)
+     *
+     * Learning:
+     * - Store indices instead of values when the answer depends on distance.
+     * - A monotonic decreasing stack helps find the next greater element in O(n).
+     * - Every element is pushed and popped at most once.
+     *
+     * Mistakes:
+     * - Initially wanted to store values instead of indices.
+     * - Forgot that indices are needed to calculate waiting days.
+     */
+
+-------------------------------------------------------------------------------------------------------------------------
+
+/*
+                    Question 2 (Medium)
+Scenario: Microservice Response Analyzer
+
+You're monitoring response times of a chain of microservices.
+
+Each service reports its response time in milliseconds.
+
+For every service, determine the next service to the right whose response time is smaller.
+
+Return the value of that response time.
+
+If no such service exists, return -1 for that position.
+*/
+
+ /**
+     * Day        : 005
+     * Date       : 08-Jul-2026
+     * Difficulty : Medium
+     * Topic      : Stack
+     * Pattern    : Monotonic Stack (Next Smaller Element)
+     * Recognition clues
+     *      Need next greater/smaller element
+     *      Need O(n)
+     *      Need information about previous unresolved elements
+     *      Answer determined when current element arrives
+     * Invariant:
+     *       The stack always stores indices whose next smaller response has not yet been found.
+     *       The stack stores unresolved indices, and their corresponding values are monotonic.
+     *       Bottom → Top: increasing (for Next Smaller)
+     *       Top → Bottom: decreasing
+     * 
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * 
+     * Time Complexity  : O(N)
+     * Space Complexity : O(N)
+     *
+     * Learning:
+     * - The same monotonic stack pattern can solve both Next Greater and Next Smaller problems by 
+     *   changing the comparison operator and what is stored in the answer
+     * - the remaning elements in the stack needs to be processed, as the values need to -1 instead of 0 for which there 
+     *   is no next smaller element.
+     *
+     * Mistakes:
+     * - Since, it is same as the previous one, no mistakes done.
+     * -
+     */
