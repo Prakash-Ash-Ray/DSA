@@ -1,0 +1,90 @@
+/*
+        Question 1 (Easy)
+Scenario: Emergency Ticket Dispatcher
+
+You're building the support system for Axis.
+
+Customer support tickets arrive with a priority number.
+
+A smaller number means higher priority.
+
+Tickets are processed one by one.
+
+Return the order in which tickets will be processed.
+*/
+
+/**
+     * Day        : 006
+     * Date       : 09-Jul-2026
+     * Difficulty : Easy
+     * Topic      : Heap
+     * Pattern    : Priority Queue(min-heap)
+     * Recognition Clues
+     *      Repeatedly extract minimum
+     *      Highest priority first
+     *      Dynamic ordering
+     *      Efficient retrieval of smallest element
+     *   
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(nlogn)
+     * Space Complexity : O(N)
+     *
+     * Learning:
+     * - Use a Priority Queue when you repeatedly need access to the smallest or largest element while elements are continuously 
+     *   added or removed. A heap maintains only the heap property, not a fully sorted order.
+     *
+     * Mistakes:
+     * - Initially forgot the PriorityQueue API methods (offer, poll, peek) and had to look them up.
+     */
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+         Question 2 (Medium)
+Scenario: Trending Products Dashboard
+
+You're building the analytics dashboard for Axis Marketplace.
+
+Each product has a popularity score.
+
+The marketing team wants to display only the K most popular products.
+
+Return the K largest scores in any order.
+*/
+
+/**
+     * Day        : 006
+     * Date       : 09-Jul-2026
+     * Difficulty : Medium
+     * Topic      : Heap
+     * Pattern    : Min-heap optimization
+     * 
+     * Recognition Clues
+     *      Top K
+     *      K largest
+     *      K smallest
+     *      Streaming data
+     *      Better than full sorting
+     *      Need only K elements, not the complete ordering.
+     *
+     * Time Taken : Nan
+     * Status     : Solved
+     *
+     * Time Complexity  : O(N logK)
+     * Space Complexity : O(K)
+     * 
+     * Invariant:
+     *      The heap always contains the k largest elements seen so far.
+     *      The root of the heap is the smallest among those K elements.
+     *
+     * Learning:
+     * - For Top K problems, maintaining a min-heap of size K is more efficient than building a max-heap of all elements.
+     * - The heap invariant ensures it always contains the current K largest elements seen so far.
+     *
+     * Mistakes:
+     * - Initially used a max-heap, resulting in O(N log N).
+     * - Initially replaced the heap's minimum unconditionally instead of checking whether the new element belonged in the top K.
+     * 
+     */
